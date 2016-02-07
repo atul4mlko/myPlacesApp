@@ -1,0 +1,15 @@
+{
+  "name": "angular-seed",
+  "private": true,
+  "version": "0.0.0",
+  "description": "An npal project",
+  "repository": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.3.1",
+    "http-server": "^0.6.1"
+  },
+  "scripts": {
+    "start": "http-server -a localhost -p 8000 -c-1"
+  }
+}

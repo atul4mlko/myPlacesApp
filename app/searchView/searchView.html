@@ -1,0 +1,55 @@
+<!-- <p>This is the partial for view 1.</p> -->
+
+<div class="container">
+
+    <!-- <h3 class="clearfix">
+        <img class="pull-left" src="http://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/695px-AngularJS_logo.svg.png"/>
+        <img class="pull-right" src="http://upload.wikimedia.org/wikipedia/commons/9/9a/Google_maps_logo.png"/>
+    </h3> -->
+
+    <div class="alert alert-danger text-center" role="alert" ng-show="apiError">
+        <b>API Error : </b>
+        <span>{{ apiStatus }}</span>
+    </div>
+
+    <form name="searchForm" novalidate
+    ng-submit="search()">
+        <div class="input-group">
+            <input name="place" type="text" class="form-control"
+            ng-model="searchPlace" required autofocus />
+            <span class="input-group-btn">
+                <button class="btn btn-primary"
+                ng-disabled="searchForm.$invalid">Search</button>
+            </span>
+        </div>
+    </form>
+
+
+    <div class="row">
+      <div class="col-xs-6 col-md-4">
+        <ul class="list-group search-list">
+          <li data-ng-repeat="place in searchResults" data-ng-mouseover="animateMarker($index)" class="list-group-item search-list-item">
+            <img ng-src="{{place.icon}}" class="img-icon" alt="image">
+            <div class="action-button" data-ng-if="isPlaceAlreadySaved(place) === false" data-ng-click="addToMyPlaces(place)">
+              +
+            </div>
+            <div class="action-button" data-ng-if="isPlaceAlreadySaved(place) === true" data-ng-click="removeFromMyPlaces(place)">
+              -
+            </div>
+            <div><strong>{{place.name}}</strong></div>
+            <div>
+              {{place.rating === '' || place.rating === null || place.rating === undefined? 'No rating' : place.rating}} -
+              <span class="currency" ng-repeat="count in getCount(place.price_level) track by $index">
+                $
+              </span>
+            </div>
+            <div class="list-address">{{place.formatted_address}}</div>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-md-8">
+        <div id="map"></div>
+      </div>
+    </div>
+
+</div>

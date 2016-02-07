@@ -1,0 +1,94 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+h3 img {
+    max-height: 50px;
+}
+
+#map {
+    height: 400px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid silver;
+}
+
+.search-list {
+    overflow-y: auto;
+    height: 400px;
+    margin: 20px 0;
+}
+
+.search-list-item {
+  min-height:80px;
+}
+
+
+.search-list-item:hover {
+  background-color: lightgrey;
+}
+
+.action-button {
+  float:right;
+  cursor:pointer;
+  font-size: 25px;
+}
+
+.action-button:hover{
+  color: green;
+}
+
+.currency {
+  color: green;
+}
+
+.list-address {
+  font-size:13px;
+  color:grey
+}
+
+.img-icon {
+  width:40px;
+  height:40px;
+  float:left
+}
+
+.good-news {
+  color: green;
+}
+
+.bad-news {
+  color: red;
+}
+
+.info-italics {
+  font-size: 12px;
+  font-style: italic;
+}

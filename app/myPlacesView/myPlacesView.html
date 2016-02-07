@@ -1,0 +1,44 @@
+<!-- <p>This is the partial for view 2.</p>
+<p>
+  Showing of 'interpolate' filter:
+  {{ 'Current version is v%VERSION%.' | interpolate }}
+</p> -->
+
+<!-- <ul class="list-group search-list">
+  <li data-ng-repeat="place in savedPlaces" class="list-group-item search-list-item">
+    <img ng-src="{{place.icon}}" class="img-icon" alt="image">
+    <div class="action-button" data-ng-click="removeFromMyPlaces(place)">
+      -
+    </div>
+    <div><strong>{{place.name}}</strong></div>
+    <div>
+      {{place.rating === '' || place.rating === null || place.rating === undefined? 'No rating' : place.rating}} -
+      <span class="currency" ng-repeat="count in getCount(place.price_level) track by $index">
+        $
+      </span>
+    </div>
+    <div class="list-address">{{place.formatted_address}}</div>
+  </li>
+</ul> -->
+<div class="container">
+  <uib-accordion close-others="{{true}}">
+      <uib-accordion-group heading="{{place.name}}" data-ng-repeat="place in savedPlaces">
+        <img ng-src="{{place.icon}}" class="img-icon" alt="image">
+        <div class="btn btn-danger pull-right action-button" data-ng-click="removeFromMyPlaces(place)">
+          -
+        </div>
+        <div>
+          <strong>{{place.name}}</strong>
+          <span data-ng-if="place.opening_hours.open_now === true" class="good-news info-italics">Open Now</span>
+          <span data-ng-if="place.opening_hours.open_now === false" class="bad-news info-italics">Closed</span>
+        </div>
+        <div>
+          {{place.rating === '' || place.rating === null || place.rating === undefined? 'No rating' : place.rating}} -
+          <span class="currency" ng-repeat="count in getCount(place.price_level) track by $index">
+            $
+          </span>
+        </div>
+        <div class="list-address">{{place.formatted_address}}</div>
+      </uib-accordion-group>
+  </uib-accordion>
+</div>
